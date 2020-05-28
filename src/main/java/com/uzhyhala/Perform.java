@@ -7,7 +7,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 public class Perform extends AbilityBot {
 
     Perform() {
-        super("", "Weather by Ulad and Nick");
+        super("1219270498:AAHWb9xCR1r56eQ_M4gi3njl70E5vLs3kuo", "Weather by Ulad and Nick");
     }
 
     @Override
@@ -19,12 +19,14 @@ public class Perform extends AbilityBot {
     public void onUpdateReceived(Update update) {
 
         if (update.hasMessage()) {
-            Message message = new Message();
+            System.err.println();
 
-            System.err.println(message.getText());
-
-
+            if(update.getMessage().getText().equals("/start")){
+                System.err.println(update.getMessage().getFrom().getFirstName());
+            }
 
         }
     }
+
+
 }
